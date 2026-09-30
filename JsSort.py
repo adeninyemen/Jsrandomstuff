@@ -1,4 +1,4 @@
-def JsSort(listA):
+def Js_Inefficient_Sort(listA):
     '''Sort's list'''
     from math import ceil
     temp = [None] *  int(ceil(max(listA)+1))
@@ -15,4 +15,4 @@ def JsSort(listA):
     return list(filter(None, temp))
 
 listA = [231, 123, 1251, 12, 99, 971.5, 971.5, 0, 23, 14, 14, 14, 14]
-print(JsSort(listA))
+print(Js_Inefficient_Sort(listA))
