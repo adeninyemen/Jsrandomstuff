@@ -1,6 +1,7 @@
-def Js_Inefficient_Sort(listA):
+def Js_SemiEfficient_Sort(listA):
     '''Sort's list'''
     from math import ceil
+    flag = 0
     temp = [None] *  int(ceil(max(listA)+1))
     listB = [None] * (len(listA)-1)
     for i in range(len(listA)-1):
@@ -11,8 +12,14 @@ def Js_Inefficient_Sort(listA):
 
     listB = list(filter(None, listB))
     for i in range(len(listB)):
-        temp.insert(int(ceil(listB[i])-i), listB[i])
+        if temp[ceil(listB[i])] == None:
+            temp[ceil(listB[i])] = listB[i]
+        elif temp[ceil(listB[i])-2] == None:
+            temp[ceil(listB[i])-2] = listB[i]
+        else:
+            flag += 1
+            temp.insert(int(ceil(listB[i])-flag), listB[i])
     return list(filter(None, temp))
 
 listA = [231, 123, 1251, 12, 99, 971.5, 971.5, 0, 23, 14, 14, 14, 14]
-print(Js_Inefficient_Sort(listA))
+print(Js_SemiEfficient_Sort(listA))
