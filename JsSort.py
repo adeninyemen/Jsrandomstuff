@@ -17,9 +17,10 @@ def Js_SemiEfficient_Sort(listA):
         elif temp[ceil(listB[i])-2] == None:
             temp[ceil(listB[i])-2] = listB[i]
         else:
-            flag += 1
             temp.insert(int(ceil(listB[i])-flag), listB[i])
+            flag += 1
+
     return list(filter(None, temp))
 
-listA = [231, 123, 1251, 12, 99, 971.5, 971.5, 23, 13.9]
+listA = [99, 99, 99, 99,43,67,79,90,100,98,377]
 print(Js_SemiEfficient_Sort(listA))
